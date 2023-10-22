@@ -21,12 +21,12 @@ customerModel.create = (data) => {
 
     // Validasi kolom "name"
     if (typeof data.name !== 'string' || !data.name.match(/^[A-Za-z\s]+$/)) {
-        throw new Error("Kolom 'name' harus berupa huruf.");
+        throw new Error("Data name harus berupa huruf.");
     }
 
     // Validasi kolom "email"
     if (typeof data.email !== 'string' || !data.email.match(/^[A-Za-z\s]+$/) && !data.email.match(/\S+@\S+\.\S+/)) {
-        throw new Error("Kolom 'email' harus berupa email yang valid.");
+        throw new Error("email yang anda masukkan tidak valid.");
     }
 
     return db.run(`INSERT INTO customer (name,address,email) VALUES ('${data.name}', '${data.address}', '${data.email}')`,(err,rows) => {
@@ -55,12 +55,12 @@ customerModel.update = (id,data,cb) => {
 
     // Validasi kolom "name"
     if (typeof data.name !== 'string' || !data.name.match(/^[A-Za-z\s]+$/)) {
-        throw new Error("Kolom 'name' harus berupa huruf.");
+        throw new Error("Data name harus berupa huruf.");
     }
 
     // Validasi kolom "email"
     if (typeof data.email !== 'string' || !data.email.match(/^[A-Za-z\s]+$/) && !data.email.match(/\S+@\S+\.\S+/)) {
-        throw new Error("Kolom 'email' harus berupa email yang valid.");
+        throw new Error("email yang anda masukkan tidak valid.");
     }
     
     return db.run(`UPDATE customer SET name = '${data.name}', address = '${data.address}', email = '${data.email}' WHERE id = ${id}`, (err, rows) => {

@@ -38,6 +38,7 @@ menuController.create = (req,res) => {
         })
     } catch (error){
         return res.json({
+            Status : "Failed",
             message: error.message
         })
     }
@@ -57,6 +58,7 @@ menuController.update = (req, res) => {
         })
     } catch (error){
         return res.json({
+            Status : "Failed",
             message : error.message
         })
     }
@@ -76,6 +78,7 @@ menuController.delete = (req, res) => {
         })
     } catch (error) {
         return res.json({
+            Status : "Failed",
             message : error.message
         })
     }

@@ -21,7 +21,7 @@ categoryModel.create = (data) => {
 
     // Validasi kolom "name"
     if (typeof data.name !== 'string' || !data.name.match(/^[A-Za-z\s]+$/)) {
-        throw new Error("Kolom 'name' harus berupa huruf.");
+        throw new Error("Data name harus berupa huruf.");
     }
 
     return db.run(`INSERT INTO categories (name) VALUES ('${data.name}')`, (err,rows) => {
@@ -50,7 +50,7 @@ categoryModel.update = (id,data,cb) => {
 
     // Validasi kolom "name"
     if (typeof data.name !== 'string' || !data.name.match(/^[A-Za-z\s]+$/)) {
-        throw new Error("Kolom 'name' harus berupa huruf.");
+        throw new Error("Data name harus berupa huruf.");
     }
     
     return db.run(`UPDATE categories SET name = '${data.name}' WHERE id = ${id}`, (err, rows) => {

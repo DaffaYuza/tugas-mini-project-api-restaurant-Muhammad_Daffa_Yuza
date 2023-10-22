@@ -38,6 +38,7 @@ categoryController.create = (req,res) => {
         })
     } catch (error){
         return res.json({
+            Status : "Failed",
             message: error.message
         })
     }
@@ -57,6 +58,7 @@ categoryController.update = (req, res) => {
         })
     } catch (error){
         return res.json({
+            Status : "Failed",
             message : error.message
         })
     }
@@ -76,6 +78,7 @@ categoryController.delete = (req, res) => {
         })
     } catch (error) {
         return res.json({
+            Status : "Failed",
             message : error.message
         })
     }

@@ -21,12 +21,12 @@ menuModel.create = (data) => {
 
     // Validasi kolom "item"
     if (typeof data.item !== 'string' || !data.item.match(/^[A-Za-z\s]+$/)) {
-        throw new Error("Kolom 'item' harus berupa huruf.");
+        throw new Error("Data item harus berupa huruf.");
     }
 
     // Validasi kolom "price"
     if (typeof data.price !== 'number' || isNaN(data.price)) {
-        throw new Error("Kolom 'price' harus berupa angka.");
+        throw new Error("Data price harus berupa angka.");
     }
 
     return db.run(`INSERT INTO menu (item,price) VALUES ('${data.item}', '${data.price}')`,(err,rows) => {
@@ -55,12 +55,12 @@ menuModel.update = (id,data,cb) => {
 
     // Validasi kolom "item"
     if (typeof data.item !== 'string' || !data.item.match(/^[A-Za-z\s]+$/)) {
-        throw new Error("Kolom 'item' harus berupa huruf.");
+        throw new Error("Data item harus berupa huruf.");
     }
 
     // Validasi kolom "price"
     if (typeof data.price !== 'number' || isNaN(data.price)) {
-        throw new Error("Kolom 'price' harus berupa angka.");
+        throw new Error("Data price harus berupa angka.");
     }
     
     return db.run(`UPDATE menu SET item = '${data.item}', price = '${data.price}' WHERE id = ${id}`, (err, rows) => {

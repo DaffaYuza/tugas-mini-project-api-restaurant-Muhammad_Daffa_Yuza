@@ -38,6 +38,7 @@ customerController.create = (req,res) => {
         })
     } catch (error){
         return res.json({
+            Status : "Failed",
             message: error.message
         })
     }
@@ -57,7 +58,7 @@ customerController.update = (req, res) => {
         })
     } catch (error){
         return res.json({
-            Status : "OK",
+            Status : "Failed",
             message : error.message
         })
     }
@@ -77,6 +78,7 @@ customerController.delete = (req, res) => {
         })
     } catch (error) {
         return res.json({
+            Status : "Failed",
             message : error.message
         })
     }
